@@ -7,13 +7,24 @@ SierpinskiCarpet = React.createClass({
 
 	drawCarpet(0,[width/2, height/2], width/3);
 
+	function getRandomArbitrary(min, max) {
+	    return Math.random() * (max - min) + min;
+	}
+
+	function getRandomColour() {
+	    return "rgb(" + Math.round(getRandomArbitrary(0,255)) +
+		"," + Math.round(getRandomArbitrary(0,255)) +
+		"," + Math.round(getRandomArbitrary(0,255)) + ")";
+	}
+
 	function drawSquare(center,length) {
 	    d3.select("#scarpet")
  	        .append("rect")
 		.attr("x", center[0] - (length/2))
 		.attr("y", center[1] - (length/2))
 		.attr("width", length)
-		.attr("height", length);
+		.attr("height", length)
+		.style("fill", getRandomColour());
 	}
 
 	function drawCarpet(n, center, length) {

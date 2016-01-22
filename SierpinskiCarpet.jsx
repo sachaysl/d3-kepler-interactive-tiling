@@ -38,14 +38,14 @@ SierpinskiCarpet = React.createClass({
 
 	   // window.setTimeout( function() {
 	    if(n < maxRecursions) {
-		window.setTimeout( function () { drawCarpet(n + 1,[cx + length,cy], length/3)}, 50);
-		window.setTimeout( function () { drawCarpet(n + 1,[cx - length,cy], length/3)}, 100);
-		window.setTimeout( function () { drawCarpet(n + 1,[cx, cy + length], length/3)}, 150);
-		window.setTimeout( function () { drawCarpet(n + 1,[cx, cy - length], length/3)}, 200);
-		window.setTimeout( function () { drawCarpet(n + 1,[cx - length, cy + length], length/3)}, 250);
-		window.setTimeout( function () { drawCarpet(n + 1,[cx + length, cy + length], length/3)}, 300);
-		window.setTimeout( function () { drawCarpet(n + 1,[cx + length, cy - length], length/3)}, 350);
-		window.setTimeout( function () { drawCarpet(n + 1,[cx - length, cy - length], length/3)}, 400);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx + length,cy], length/3)}, 100);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx - length,cy], length/3)}, 200);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx, cy + length], length/3)}, 300);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx, cy - length], length/3)}, 400);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx - length, cy + length], length/3)}, 500);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx + length, cy + length], length/3)}, 600);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx + length, cy - length], length/3)}, 700);
+		window.setTimeout( function () { drawCarpet(n + 1,[cx - length, cy - length], length/3)}, 800);
 	    }
 		
 		

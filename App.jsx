@@ -24,9 +24,9 @@ App = React.createClass({
 	}
 
 	function getRandomColour() {
-	    return "rgb(" + Math.round(getRandomArbitrary(0,255)) +
-		"," + Math.round(getRandomArbitrary(0,255)) +
-		"," + Math.round(getRandomArbitrary(0,255)) + ")";
+	    return "rgb(" + Math.round(getRandomArbitrary(0,0)) +
+		"," + Math.round(getRandomArbitrary(0,0)) +
+		"," + Math.round(getRandomArbitrary(100,255)) + ")";
 	}
 	
 	d3.timer(function() {

@@ -3,10 +3,13 @@ SierpinskiCarpet = React.createClass({
     drawSCarpet: function() {
 	var width = 600;
 	var height = 600;
-	var maxRecursions = 5;
+	var maxRecursions = 4;
+	var interval = 1000;
 
-	drawCarpet(0,[width/2, height/2], width/3);
+//        drawCarpet(0,[width/2, height/2], width/3);
 
+	d3.timer(drawCarpet(0,[width/2, height/2], width/3), 5000);
+		 
 	function getRandomArbitrary(min, max) {
 	    return Math.random() * (max - min) + min;
 	}
@@ -33,6 +36,7 @@ SierpinskiCarpet = React.createClass({
 	    //draw starting square
 	    drawSquare([cx,cy], length );
 
+	    window.setTimeout( function() {
 	    if(n < maxRecursions) {
 		drawCarpet(n + 1,[cx + length,cy], length/3);
 		drawCarpet(n + 1,[cx - length,cy], length/3);
@@ -43,10 +47,10 @@ SierpinskiCarpet = React.createClass({
 		drawCarpet(n + 1,[cx + length, cy + length], length/3);
 		drawCarpet(n + 1,[cx + length, cy - length], length/3);
 		drawCarpet(n + 1,[cx - length, cy - length], length/3);
-		
-		
-		
 	    }
+		
+		
+	    }, 1000);
 
 	}
 		

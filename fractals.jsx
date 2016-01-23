@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
     Meteor.startup(function () {
-	React.render(<SierpinskiCarpet/>, document.getElementById("render-target"));
+	React.render(<KeplerMonster/>, document.getElementById("render-target"));
   });
 
 }

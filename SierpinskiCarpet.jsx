@@ -3,7 +3,7 @@ SierpinskiCarpet = React.createClass({
     drawSCarpet: function() {
 	var width = 600;
 	var height = 600;
-	var maxRecursions = 4;
+	var maxRecursions = 6;
 	var interval = 1000;
 
 	//drawCarpet(0,[width/2, height/2], width/3);

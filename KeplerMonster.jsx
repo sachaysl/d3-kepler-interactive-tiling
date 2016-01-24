@@ -179,7 +179,6 @@ KeplerMonster = React.createClass({
 	    .attr("stroke","black")
 	    .attr("stroke-width", "1");
 
-
         //pentagon6
 	svg.append("svg:polygon")
 	    .attr("id", "pentagon6")
@@ -192,14 +191,34 @@ KeplerMonster = React.createClass({
 
 	//pentacle
 	svg.append("svg:polygon")
-	        .attr("id", "pentacle")
-	        .attr("visibility", "visible")
-	// .attr("transform", "rotate(90," + star1[0] + "," + star1[1] + ")")
-	        .attr("points", calculatePentaclePoints(600,200,5, 50,20))
-	        .attr("fill", "none")
-	        .attr("stroke","black")
-	        .attr("stroke-width", "1");
+	    .attr("id", "pentacle")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36,444.5,95.5)")
+	    .attr("points", calculatePentaclePoints(444.5,95.5,5, 41,16))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+	
 
+	//pentagon7
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon7")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 411, 120)")
+	    .attr("points", calculatePolygonPoints(5,411,120,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon8
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon7")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 457.5, 135)")
+	    .attr("points", calculatePolygonPoints(5,457.5,135,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
 
 
     },

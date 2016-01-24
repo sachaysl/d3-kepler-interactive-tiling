@@ -63,13 +63,60 @@ KeplerMonster = React.createClass({
 	    return results;
 	}
 
+	function calculateMonsterPoints(centerX, centerY, radius) {
+	    var results = "";
+	    var angle = Math.PI / 10;
+	    var r = radius;
+
+	    var centerX2 = centerX;
+	    var centerY2 = centerY + (1.62 * r);
+	
+
+
+	    for (var i = 0; i < 9; i++) {
+		var currX = centerX + Math.cos(7 * angle + i * 2 * angle) * r;
+		var currY = centerY + Math.sin(7 * angle + i * 2 * angle) *  r;
+
+				// Our first time we simply append the coordinates
+		// subsequent times we append a ", " to distinguish
+		// each coordinate pair.
+
+		if (i == 0)
+		{
+		    results = currX + "," + currY;
+		}
+		else
+		{
+		    results += "," + currX + "," + currY;
+		}
+	    }
+
+	    for (var k = 0; k < 9; k++) {
+		var currX2 = centerX + Math.cos(-3 * angle + k * 2 * angle) * r;
+		var currY2 = centerY2 + Math.sin(-3 * angle + k * 2 * angle) *  r;
+
+		    results += "," + currX2 + "," + currY2;
+	
+	    }
+
+	    return results;
+	}
+
+	//monster
+	svg.append("svg:polygon")
+	    .attr("id", "monster")
+	    .attr("visibility", "visible")
+	    .attr("points", calculateMonsterPoints(700,200,50))
+	    .attr("fill", "none")
+	    .attr("stroke", "black")
+	    .attr("stroke-width", "2");
 
 	//decagon
 	svg.append("svg:polygon")
 	    .attr("id", "decagon")
 	    .attr("visibility", "visible")
 	// .attr("transform", "rotate(90," + star1[0] + "," + star1[1] + ")")
-	    .attr("points", calculatePolygonPoints(10,200,200,50))
+	    .attr("points", calculatePolygonPoints(10,100,200,50))
 	    .attr("fill", "none")
 	    .attr("stroke","black")
 	    .attr("stroke-width", "2");
@@ -79,7 +126,7 @@ KeplerMonster = React.createClass({
 	    .attr("id", "pentagon")
 	    .attr("visibility", "visible")
 	// .attr("transform", "rotate(90," + star1[0] + "," + star1[1] + ")")
-	    .attr("points", calculatePolygonPoints(5,400,200,50))
+	    .attr("points", calculatePolygonPoints(5,300,200,50))
 	    .attr("fill", "none")
 	    .attr("stroke","black")
 	    .attr("stroke-width", "2");
@@ -90,13 +137,10 @@ KeplerMonster = React.createClass({
 	    .attr("id", "pentacle")
 	    .attr("visibility", "visible")
 	// .attr("transform", "rotate(90," + star1[0] + "," + star1[1] + ")")
-	    .attr("points", calculatePentaclePoints(600,200,5, 50,20))
+	    .attr("points", calculatePentaclePoints(500,200,5, 50,20))
 	    .attr("fill", "none")
 	    .attr("stroke","black")
 	    .attr("stroke-width", "2");
-
-	
-	
 
 
     },

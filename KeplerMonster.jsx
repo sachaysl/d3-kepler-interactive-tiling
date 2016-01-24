@@ -371,6 +371,16 @@ KeplerMonster = React.createClass({
 	    .attr("stroke","black")
 	    .attr("stroke-width", "1");
 
+	//pentagon22
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon22")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(180, 657, 200)")
+	    .attr("points", calculatePolygonPoints(5,657,200,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
 	
 	
 

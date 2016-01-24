@@ -69,7 +69,7 @@ KeplerMonster = React.createClass({
 	    var r = radius;
 
 	    var centerX2 = centerX;
-	    var centerY2 = centerY + (1.62 * r);
+	    var centerY2 = centerY + (1.6181 * r);
 	
 
 

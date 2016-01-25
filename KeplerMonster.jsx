@@ -21,6 +21,9 @@ KeplerMonster = React.createClass({
 	var g3 = svg.append("g")
 		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(263,-820)");
 
+	var g4 = svg.append("g")
+		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(912,-820)");
+
 	var point = svg.append("circle")
 		.attr("cx", 200)
 		.attr("cy", 200)
@@ -31,6 +34,7 @@ KeplerMonster = React.createClass({
 	drawKeplerMonster(g1);
 	drawKeplerMonster(g2);
 	drawKeplerMonster2(g3);
+	drawKeplerMonster3(g4);
 	
 	
 
@@ -692,6 +696,289 @@ KeplerMonster = React.createClass({
 //	    .attr("fill", "none")
 //	    .attr("stroke","black")
 //	    .attr("stroke-width", "1");
+	}
+
+	function drawKeplerMonster3(svg) {
+	//monster
+	svg.append("svg:polygon")
+	    .attr("id", "monster")
+	    .attr("visibility", "visible")
+	    .attr("points", calculateMonsterPoints(355,159.5,50))
+	    .attr("fill", "none")
+	    .attr("stroke", "black")
+	    .attr("stroke-width", "1");
+
+	//decagon1
+	svg.append("svg:polygon")
+	    .attr("id", "decagon1")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(18,231,200)")
+	    .attr("points", calculatePolygonPoints(10,231,200,50))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//decagon2
+	svg.append("svg:polygon")
+	    .attr("id", "decagon2")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(18,479,200)")
+	    .attr("points", calculatePolygonPoints(10,479,200,50))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon1
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon1")
+	    .attr("visibility", "visible")
+	// .attr("transform", "rotate(90," + star1[0] + "," + star1[1] + ")")
+	    .attr("points", calculatePolygonPoints(5,299.5,200,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon2
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon2")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 410.5, 200)")
+	    .attr("points", calculatePolygonPoints(5,410.5,200,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon3
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon3")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(0, 410, 200)")
+	    .attr("points", calculatePolygonPoints(5,423.5,160,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon4
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon4")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 286.5, 160)")
+	    .attr("points", calculatePolygonPoints(5,286.5,160,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon5
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon5")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 286.5, 240)")
+	    .attr("points", calculatePolygonPoints(5,286.5,240,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+        //pentagon6
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon6")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(0, 420, 240)")
+	    .attr("points", calculatePolygonPoints(5,423.5,240,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+
+	//pentagon7
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon7")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 411, 120)")
+	    .attr("points", calculatePolygonPoints(5,411,120,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon8
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon8")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 457.5, 135)")
+	    .attr("points", calculatePolygonPoints(5,457.5,135,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon9
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon9")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36, 277.5, 125)")
+	    .attr("points", calculatePolygonPoints(5,299,120,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon10
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon10")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36, 285, 135)")
+	    .attr("points", calculatePolygonPoints(5,252.5,135,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon11
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon11")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36, 285, 135)")
+	    .attr("points", calculatePolygonPoints(5,252.5,265,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon12
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon12")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36, 285, 135)")
+	    .attr("points", calculatePolygonPoints(5,299,280,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon13
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon13")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 411, 280)")
+	    .attr("points", calculatePolygonPoints(5,411,280,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon14
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon14")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 457.5, 265)")
+	    .attr("points", calculatePolygonPoints(5,457.5,265,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon15
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon15")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 534, 241)")
+	    .attr("points", calculatePolygonPoints(5,534,240,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon16
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon16")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36, 534, 241)")
+	    .attr("points", calculatePolygonPoints(5,547.5,200,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon17
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon17")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36, 534.5, 160)")
+	    .attr("points", calculatePolygonPoints(5,534.5,160,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon18
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon15")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36, 134, 240)")
+	    .attr("points", calculatePolygonPoints(5,175,240,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon19
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon16")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(180, 162.5, 200)")
+	    .attr("points", calculatePolygonPoints(5,162.5,200,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentagon20
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon17")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36, 134.5, 160)")
+	    .attr("points", calculatePolygonPoints(5,175.5,160,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	//pentacle
+//	svg.append("svg:polygon")
+//	    .attr("id", "pentacle")
+//	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36,444.5,95.5)")
+//	    .attr("points", calculatePentaclePoints(444.5,95.5,5, 41,16))
+//	    .attr("fill", "none")
+//	    .attr("stroke","black")
+//	    .attr("stroke-width", "1");
+
+	//pentacle1
+	svg.append("svg:polygon")
+	    .attr("id", "pentacle1")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(36,120.5,200)")
+	    .attr("points", calculatePentaclePoints(120.5,200,5, 41,16))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+		//pentacle2
+	svg.append("svg:polygon")
+	    .attr("id", "pentacle2")
+	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(36,120.5,200)")
+	    .attr("points", calculatePentaclePoints(589.5,200,5, 41,16))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
+
+	
+	//pentagon21
+//	svg.append("svg:polygon")
+//	    .attr("id", "pentagon21")
+//	    .attr("visibility", "visible")
+//	    .attr("transform", "rotate(180, 162.5, 200)")
+//	    .attr("points", calculatePolygonPoints(5,53,200,26))
+//	    .attr("fill", "none")
+//	    .attr("stroke","black")
+//	    .attr("stroke-width", "1");
+
+	//pentagon22
+	svg.append("svg:polygon")
+	    .attr("id", "pentagon22")
+	    .attr("visibility", "visible")
+	    .attr("transform", "rotate(180, 657, 200)")
+	    .attr("points", calculatePolygonPoints(5,657,200,26))
+	    .attr("fill", "none")
+	    .attr("stroke","black")
+	    .attr("stroke-width", "1");
 	}
 
 	

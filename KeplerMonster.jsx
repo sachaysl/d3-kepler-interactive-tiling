@@ -2,9 +2,23 @@ KeplerMonster = React.createClass({
 
     drawKeplerMonster: function() {
 
+	var width = 850;
+	var height = 600;
+
 	var svg = d3.select("#keplerMonster")
-		.attr("width", 800)
-		.attr("height", 500);
+		.attr("width", width)
+		.attr("height", height);
+
+
+	var g1	= svg.append("g")
+		.attr("transform", "scale(0.5, 0.5)");
+
+	var g2 = svg.append("g")
+		.attr("transform", "scale(0.5, 0.5)");
+	
+	drawKeplerMonster(g1);
+	drawKeplerMonster(g2);
+	
 
 	function calculatePolygonPoints(sides, centerX, centerY, radius) {
 
@@ -100,6 +114,7 @@ KeplerMonster = React.createClass({
 	    return results;
 	}
 
+	function drawKeplerMonster(svg) {
 	//monster
 	svg.append("svg:polygon")
 	    .attr("id", "monster")
@@ -380,7 +395,7 @@ KeplerMonster = React.createClass({
 	    .attr("fill", "none")
 	    .attr("stroke","black")
 	    .attr("stroke-width", "1");
-
+	}
 	
 	
 

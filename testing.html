@@ -34,6 +34,20 @@
 	    .attr("stroke","black")
     .attr("stroke-width", "1");
 
+    drawFlower();
+
+    function drawFlower() {
+    drawFirstPetal();
+    drawSecondPetal();
+    drawThirdPetal();
+    drawFourthPetal();
+    drawFifthPetal();
+    }
+
+    
+
+
+    function drawFirstPetal() {
     //bottom of star 
     	var g0 = svg.append("g")
 		.attr("transform", "translate(-28, 206)");
@@ -56,8 +70,10 @@
 	drawKeplerMonster(g1);
 	drawKeplerMonster(g2);
 	drawKeplerMonster3(g3);
-	drawKeplerMonster3(g4);
+        drawKeplerMonster3(g4);
+    }
 
+    function drawSecondPetal() {
     //bottom right of star
 
        var gbr = svg.append("g")
@@ -81,8 +97,10 @@
     	drawKeplerMonster(gbr1);
 	drawKeplerMonster(gbr2);
 	drawKeplerMonster3(gbr3);
-    drawKeplerMonster3(gbr4);
+        drawKeplerMonster3(gbr4);
+    };
 
+    function drawThirdPetal() {
         //top left of star
 
        var gtl = svg.append("g")
@@ -107,7 +125,9 @@
 	drawKeplerMonster(gtl2);
 	drawKeplerMonster3(gtl3);
         drawKeplerMonster3(gtl4);
-
+    };
+    
+    function drawFifthPetal() {
        //bottom left of star
 
        var gbl = svg.append("g")
@@ -132,7 +152,9 @@
 	drawKeplerMonster(gbl2);
 	drawKeplerMonster3(gbl3);
         drawKeplerMonster3(gbl4);
+    };
 
+    function drawFourthPetal() {
         //top right of star
 
        var gtr = svg.append("g")
@@ -156,11 +178,9 @@
     	drawKeplerMonster(gtr1);
 	drawKeplerMonster(gtr2);
 	drawKeplerMonster3(gtr3);
-	drawKeplerMonster3(gtr4);
-
-
+        drawKeplerMonster3(gtr4);
+    };
     
-
     	function calculatePolygonPoints(sides, centerX, centerY, radius) {
 
 	    var results = "";

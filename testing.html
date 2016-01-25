@@ -29,16 +29,17 @@
 	    .attr("id", "pentacleCentre")
 	    .attr("visibility", "visible")
 	    .attr("points", calculatePentaclePoints(width,height,5, 41,16))
-	    .attr("transform", " rotate(54," + width/2 + "," + height/2 + ") scale(0.5,0.5)")
+	    .attr("transform", " rotate(54," + width/2.4 + "," + height/2.4 + ") scale(0.4,0.4) translate(240,-45)")
 	    .attr("fill", "none")
 	    .attr("stroke","black")
     .attr("stroke-width", "1");
 
+    //bottom of star 
     	var g0 = svg.append("g")
-		.attr("transform", "translate(-100, 150)");
+		.attr("transform", "translate(-28, 206)");
 			    
 	var g = g0.append("g")
-		.attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale (0.8,0.8)");
+		.attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale(0.8, 0.8)");
 	
 	var g1	= g.append("g")
 		.attr("transform", "scale(0.5, 0.5)");
@@ -51,12 +52,36 @@
 
 	var g4 = g0.append("g")
 		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(912,-820)");
-
     	
 	drawKeplerMonster(g1);
 	drawKeplerMonster(g2);
-	drawKeplerMonster2(g3);
+	drawKeplerMonster3(g3);
 	drawKeplerMonster3(g4);
+
+    //bottom right of star
+
+       var gbr = svg.append("g")
+		.attr("transform", "translate(-28, 206) rotate(288," + (width/2 + 28) + "," + (height/2 - 206)  +  ")" );
+			    
+	var brg = gbr.append("g")
+		.attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale(0.8, 0.8)");
+	
+	var gbr1	= brg.append("g")
+		.attr("transform", "scale(0.5, 0.5)");
+
+	var gbr2 = brg.append("g")
+		.attr("transform", "scale(0.5, 0.5) translate(0, 210)");
+
+	var gbr3 = gbr.append("g")
+		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(263,-820)");
+
+	var gbr4 = gbr.append("g")
+                .attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(912,-820)");
+
+    	drawKeplerMonster(gbr1);
+	drawKeplerMonster(gbr2);
+	drawKeplerMonster3(gbr3);
+	drawKeplerMonster3(gbr4);
 
 
     	function calculatePolygonPoints(sides, centerX, centerY, radius) {

@@ -9,12 +9,21 @@ KeplerMonster = React.createClass({
 		.attr("width", width)
 		.attr("height", height);
 
-
-	var g1	= svg.append("g")
+	var g = svg.append("g")
+		.attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale (0.8,0.8)");
+	
+	var g1	= g.append("g")
 		.attr("transform", "scale(0.5, 0.5)");
 
-	var g2 = svg.append("g")
-		.attr("transform", "scale(0.5, 0.5)");
+	var g2 = g.append("g")
+		.attr("transform", "scale(0.5, 0.5) translate(0, 210)");
+
+	var point = svg.append("circle")
+		.attr("cx", 200)
+		.attr("cy", 200)
+		.attr("r", 2)
+		.style("fill", "red");
+	
 	
 	drawKeplerMonster(g1);
 	drawKeplerMonster(g2);

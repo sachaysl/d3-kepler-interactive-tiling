@@ -31,7 +31,10 @@ KeplerMonster = React.createClass({
 
 	var g6 = g0.append("g")
 		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(1125.5,-478.5)");
-	
+
+	var g7 = g.append("g")
+		.attr("transform", "scale(0.5, 0.5) translate(324.5, -105.5)");
+
 	var point = svg.append("circle")
 		.attr("cx", 200)
 		.attr("cy", 200)
@@ -45,6 +48,8 @@ KeplerMonster = React.createClass({
 	drawKeplerMonster3(g4);
 	drawKeplerMonster(g5);
 	drawKeplerMonster3(g6);
+	drawKeplerMonster3(g7);
+	
 	function calculatePolygonPoints(sides, centerX, centerY, radius) {
 
 	    var results = "";

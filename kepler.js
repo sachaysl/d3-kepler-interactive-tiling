@@ -1,7 +1,3 @@
-KeplerMonster = React.createClass({
-
-    drawKeplerMonster: function() {
-
 	var width = 850;
 	var height = 600;
 
@@ -37,35 +33,6 @@ KeplerMonster = React.createClass({
 	var g4 = g0.append("g")
 		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(912,-820)");
 
-
-
-
-	var g5 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(801,-584)");
-
-	var g6 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(1125.5,-478.5)");
-
-	var g7 = g.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(324.5, -105.5)");
-
-	var g8 = g.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(649, 0)");
-
-	var g9 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(1450,-373)");
-
-	var g10 = g.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(649, -211)");
-
-	var g11 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(1774,-268)");
-
-	var g12 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(120,300,350) translate(-900,-450)");
-
-	
-
 	
 	var point = svg.append("circle")
 		.attr("cx", width/2)
@@ -78,15 +45,6 @@ KeplerMonster = React.createClass({
 	drawKeplerMonster(g2);
 	drawKeplerMonster2(g3);
 	drawKeplerMonster3(g4);
-//	drawKeplerMonster(g5);
-//	drawKeplerMonster3(g6);
-//	drawKeplerMonster3(g7);
-//	drawKeplerMonster3(g8);
-//	drawKeplerMonster3(g9);
-//	drawKeplerMonster3(g10);
-//	drawKeplerMonster3(g11);
-//	drawKeplerMonster(g12);
-	
 	function calculatePolygonPoints(sides, centerX, centerY, radius) {
 
 	    var results = "";
@@ -1029,35 +987,3 @@ KeplerMonster = React.createClass({
 	    .attr("stroke","black")
 	    .attr("stroke-width", "1");
 	}
-
-	
-
-
-
-    },
-    
-
-    componentDidMount: function() {
-	this.drawKeplerMonster();
-    },
-
-    svgStyle: {
-	margin: 'auto',
-	display: 'block'
-    },
-
-    render: function() {
-
-	return(
-	    <div>
-	      <div textAlign = "center" >
-	      <svg id="keplerMonster" style = {this.svgStyle}>
-	      </svg>
-	    </div>
-
-	    </div>
-	    
-	);
-
-    }
-});

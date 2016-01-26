@@ -69,19 +69,30 @@
     var g01 = g0.append("g")
     .attr("transform", "translate(200, 200) rotate(54, 325, 300) translate(-599, -87) scale(0.8, 0.8)");
 
-        var g02 = g0.append("g")
-		    .attr("transform", "translate(200, 200) rotate(-54, 325, 300) translate(880.5, -203.5) scale(0.8, 0.8)");
+    var g02 = g0.append("g")
+    .attr("transform", "translate(200, 200) rotate(-54, 325, 300) translate(880.5, -203.5) scale(0.8, 0.8)");
+
+    var g03 = g0.append("g")
+    .attr("transform", "translate(200, 200) rotate(-54, 325, 300) translate(880.5, -35) scale(0.8, 0.8)");
+
+    var g04 = g0.append("g")
+    .attr("transform", "translate(200, 200) rotate(54, 325, 300) translate(-599, 81.5) scale(0.8, 0.8)");
 
     var g1 = g.append("g").attr("transform", "scale(0.5, 0.5)");
 
     var g2 = g00.append("g").attr("transform", "scale(0.5, 0.5)");
     var g3 = g01.append("g").attr("transform", "scale(0.5, 0.5)");
     var g4 = g02.append("g").attr("transform", "scale(0.5, 0.5)");
+    var g5 = g03.append("g").attr("transform", "scale(0.5, 0.5)");
+    var g6 = g04.append("g").attr("transform", "scale(0.5, 0.5)");
     
     drawKeplerMonster3(g1);
     drawKeplerMonster3(g2);
     drawKeplerMonster2(g3);
-        drawKeplerMonster3(g4);
+    drawKeplerMonster3(g4);
+    drawKeplerMonster3(g5);
+    drawKeplerMonster3(g6);
+    
 
     
 

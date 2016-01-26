@@ -4,10 +4,10 @@ KeplerMonster = React.createClass({
 
 	var width = 700;
 	var height = 500;
-	var monsterColour = "red" ;
-	var decagonColour = "blue";
-	var pentagonColour = "green";
-	var pentacleColour = "yellow";
+	var monsterColour = "rgb(254, 111, 94)";
+	var decagonColour = "rgb(176,224,230)";
+	var pentagonColour = "rgb(102,153,204)";
+	var pentacleColour = "rgb(255,3,62)";
 
 	var svg = d3.select("#keplerMonster")
 		.attr("width", width)

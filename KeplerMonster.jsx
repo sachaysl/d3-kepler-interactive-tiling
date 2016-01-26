@@ -2,13 +2,17 @@ KeplerMonster = React.createClass({
 
     drawKeplerMonster: function() {
 
-	var width = 850;
-	var height = 600;
+	var width = 700;
+	var height = 500;
+	var monsterColour = "red" ;
+	var decagonColour = "blue";
+	var pentagonColour = "green";
+	var pentacleColour = "yellow";
 
 	var svg = d3.select("#keplerMonster")
 		.attr("width", width)
 		.attr("height", height)
-		.style("background", "green");
+		.style("background", pentagonColour);
 
 
 //    	var centrePoint = svg.append("circle")
@@ -21,19 +25,15 @@ KeplerMonster = React.createClass({
 	svg.append("svg:polygon")
 	    .attr("id", "pentacleCentre")
 	    .attr("visibility", "visible")
-	    .attr("points", calculatePentaclePoints(width,height,5, 41,16))
-	    .attr("transform", " rotate(54," + width/2.4 + "," + height/2.4 + ") scale(0.4,0.4) translate(240,-45)")
+	    .attr("points", calculatePentaclePoints(850,600,5, 41,16))
+	    .attr("transform", " rotate(54," + 850/2.4 + "," + 600/2.4 + ") scale(0.4,0.4) translate(240,-45)")
 	    .attr("fill", "none")
 	    .attr("stroke","black")
 	    .attr("stroke-width", "1")
 	    .style("fill", pentacleColour);
 
 	var masterg = svg.append("g").attr("id", "masterg");
-	var monsterColour = "red" ;
-	var decagonColour = "blue";
-	var pentagonColour = "green";
-	var pentacleColour = "yellow";
-	var svgBackgroundColour = pentagonColour;
+	
 
 	drawTiling();
 	
@@ -59,7 +59,7 @@ KeplerMonster = React.createClass({
 
 	    }
 
-	d3.select("#masterg").attr("transform", "scale(1.2,1.2)");
+	d3.select("#masterg").attr("transform", "scale(1,1)");
     //	var pentacleCentre = d3.select("#pentacleCentre");
 
     //	var t0 = masterg1.transition().delay(0).duration(5000);
@@ -72,7 +72,7 @@ KeplerMonster = React.createClass({
 	function fillInGaps(masterg) {
 
 	     var g0 = masterg.append("g")
-			    .attr("transform", "translate(-28, 278) rotate(" + 0 + "," + (width/2 + 28) + "," + (height/2 - 278)  +  ")" );
+			    .attr("transform", "translate(-28, 278) rotate(" + 0 + "," + (850/2 + 28) + "," + (600/2 - 278)  +  ")" );
 
 	     var g = g0.append("g")
 	    .attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(58, 208) scale(0.4, 0.4)");
@@ -188,7 +188,7 @@ KeplerMonster = React.createClass({
 
 	function drawIntermediatePetal(degrees, masterg) {
 	    var g0 = masterg.append("g")
-		    .attr("transform", "translate(-28, 278) rotate(" + degrees + "," + (width/2 + 28) + "," + (height/2 - 278)  +  ")" );
+		    .attr("transform", "translate(-28, 278) rotate(" + degrees + "," + (850/2 + 28) + "," + (600/2 - 278)  +  ")" );
 
 	    var g = g0.append("g")
 		    .attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale(0.8, 0.8)");
@@ -217,7 +217,7 @@ KeplerMonster = React.createClass({
     function drawPetal(degrees, masterg) {
     //bottom of star 
     	var g0 = masterg.append("g")
-		.attr("transform", "translate(-28, 206.5) rotate(" + degrees + "," + (width/2 + 28) + "," + (height/2 - 206.5)  +  ")" );
+		.attr("transform", "translate(-28, 206.5) rotate(" + degrees + "," + (850/2 + 28) + "," + (600/2 - 206.5)  +  ")" );
 			    
 	var g = g0.append("g")
 		.attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale(0.8, 0.8)");

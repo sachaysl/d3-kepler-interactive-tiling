@@ -76,7 +76,7 @@ KeplerMonster = React.createClass({
 	    drawKeplerMonster(g2);
 	    drawKeplerMonster3(g3);
 	    drawKeplerMonster3(g4);
-	}
+	} 
 
 	
     

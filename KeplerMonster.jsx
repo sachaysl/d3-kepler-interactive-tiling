@@ -2,28 +2,88 @@ KeplerMonster = React.createClass({
 
     drawKeplerMonster: function() {
 
-	var width = 850;
+		var width = 850;
 	var height = 600;
 
 	var svg = d3.select("#keplerMonster")
 		.attr("width", width)
 		.attr("height", height);
 
-	//centre pentacle
+    	var point = svg.append("circle")
+		.attr("cx", width/2)
+		.attr("cy", height/2)
+		.attr("r", 2)
+                .style("fill", "red");
+
+        //centre pentacle
 	svg.append("svg:polygon")
 	    .attr("id", "pentacleCentre")
 	    .attr("visibility", "visible")
 	    .attr("points", calculatePentaclePoints(width,height,5, 41,16))
-	    .attr("transform", " rotate(54," + width/2 + "," + height/2 + ") scale(0.5,0.5)")
+	    .attr("transform", " rotate(54," + width/2.4 + "," + height/2.4 + ") scale(0.4,0.4) translate(240,-45)")
 	    .attr("fill", "none")
 	    .attr("stroke","black")
-	    .attr("stroke-width", "1");
+    .attr("stroke-width", "1");
 
-	var g0 = svg.append("g")
-		.attr("transform", "translate(-100, 150)");
+    var masterg = svg.append("g").attr("id", "masterg");
+   
+    drawFlower(masterg);
+
+    function drawFlower(masterg) {
+      drawPetal(0, masterg);
+      drawPetal(72, masterg);
+      drawPetal(144, masterg);
+      drawPetal(216, masterg);
+      drawPetal(288, masterg);
+        
+    }
+
+	//var masterg1 = d3.select("#masterg");
+//	var pentacleCentre = d3.select("#pentacleCentre");
+	
+//	var t0 = masterg1.transition().delay(0).duration(5000);
+//	var t1 = pentacleCentre.transition().delay(0).duration(5000);
+	
+//	t0.attr("transform", " rotate(" + 180 + "," + (width/2) + "," + (height/2)  +  ")" );
+	//	t1.attr("transform", " rotate(" + 180 + "," + (width/2) + "," + (height/2)  +  ")" );
+
+	drawIntermediatePetal(36, masterg);
+    console.log("hi");
+	function drawIntermediatePetal(degrees, masterg) {
+		    var g0 = masterg.append("g")
+		    .attr("transform", "translate(-28, 206) rotate(" + degrees + "," + (width/2 + 28) + "," + (height/2 - 206)  +  ")" );
+
+	    var g = g0.append("g")
+		    .attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale(0.8, 0.8)");
+
+	    var g1	= g.append("g")
+		    .attr("transform", "scale(0.5, 0.5)");
+
+	    var g2 = g.append("g")
+		    .attr("transform", "scale(0.5, 0.5) translate(0, 210)");
+
+	    var g3 = g0.append("g")
+		    .attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(263,-820)");
+
+	    var g4 = g0.append("g")
+		    .attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(912,-820)");
+
+	    drawKeplerMonster(g1);
+	    drawKeplerMonster(g2);
+	    drawKeplerMonster3(g3);
+	    drawKeplerMonster3(g4);
+	}
+
+	
+    
+    
+    function drawPetal(degrees, masterg) {
+    //bottom of star 
+    	var g0 = masterg.append("g")
+		.attr("transform", "translate(-28, 206) rotate(" + degrees + "," + (width/2 + 28) + "," + (height/2 - 206)  +  ")" );
 			    
 	var g = g0.append("g")
-		.attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale (0.8,0.8)");
+		.attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale(0.8, 0.8)");
 	
 	var g1	= g.append("g")
 		.attr("transform", "scale(0.5, 0.5)");
@@ -36,57 +96,13 @@ KeplerMonster = React.createClass({
 
 	var g4 = g0.append("g")
 		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(90,200,50) translate(912,-820)");
-
-
-
-
-	var g5 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(801,-584)");
-
-	var g6 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(1125.5,-478.5)");
-
-	var g7 = g.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(324.5, -105.5)");
-
-	var g8 = g.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(649, 0)");
-
-	var g9 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(1450,-373)");
-
-	var g10 = g.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(649, -211)");
-
-	var g11 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(54,200,50) translate(1774,-268)");
-
-	var g12 = g0.append("g")
-		.attr("transform", "scale(0.5, 0.5) translate(210, 0) scale(0.8, 0.8) rotate(120,300,350) translate(-900,-450)");
-
-	
-
-	
-	var point = svg.append("circle")
-		.attr("cx", width/2)
-		.attr("cy", height/2)
-		.attr("r", 2)
-		.style("fill", "red");
-	
-	
+    	
 	drawKeplerMonster(g1);
 	drawKeplerMonster(g2);
-	drawKeplerMonster2(g3);
-	drawKeplerMonster3(g4);
-//	drawKeplerMonster(g5);
-//	drawKeplerMonster3(g6);
-//	drawKeplerMonster3(g7);
-//	drawKeplerMonster3(g8);
-//	drawKeplerMonster3(g9);
-//	drawKeplerMonster3(g10);
-//	drawKeplerMonster3(g11);
-//	drawKeplerMonster(g12);
-	
+	drawKeplerMonster3(g3);
+        drawKeplerMonster3(g4);
+    }
+
 	function calculatePolygonPoints(sides, centerX, centerY, radius) {
 
 	    var results = "";

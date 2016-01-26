@@ -1,1 +1,5 @@
 /* CSS declarations go here */
+body {
+    background-image: url("http://graphics8.nytimes.com/newsgraphics/2015/07/14/pluto-flyby/50eeda0ba286e0f0137bf2d71a5ae22841d6f664/stars.gif") !important;
+    background: #1a1a1a;
+}

@@ -7,7 +7,9 @@ KeplerMonster = React.createClass({
 
 	var svg = d3.select("#keplerMonster")
 		.attr("width", width)
-		.attr("height", height);
+		.attr("height", height)
+		.style("background", "green");
+
 
 //    	var centrePoint = svg.append("circle")
 //		.attr("cx", width/2)
@@ -31,7 +33,7 @@ KeplerMonster = React.createClass({
 	var decagonColour = "blue";
 	var pentagonColour = "green";
 	var pentacleColour = "yellow";
-	
+	var svgBackgroundColour = pentagonColour;
 
 	drawTiling();
 	
@@ -57,7 +59,7 @@ KeplerMonster = React.createClass({
 
 	    }
 
-	    //var masterg1 = d3.select("#masterg");
+	d3.select("#masterg").attr("transform", "scale(1.2,1.2)");
     //	var pentacleCentre = d3.select("#pentacleCentre");
 
     //	var t0 = masterg1.transition().delay(0).duration(5000);
@@ -612,7 +614,7 @@ KeplerMonster = React.createClass({
 		.attr("stroke-width", "1")
 	    	.style("fill", pentacleColour);
 
-	    if (type != 1) {
+	 //   if (type != 1) {
 		//pentagon21
 		svg.append("svg:polygon")
 		    .attr("id", "pentagon21")
@@ -623,9 +625,9 @@ KeplerMonster = React.createClass({
 		    .attr("stroke","black")
 		    .attr("stroke-width", "1")
 		    .style("fill", pentagonColour);
-	    }
+	   // }
 	    
-	    if (type != 2) {
+	  //  if (type != 2) {
 		//pentagon22
 		svg.append("svg:polygon")
 		    .attr("id", "pentagon22")
@@ -636,7 +638,7 @@ KeplerMonster = React.createClass({
 		    .attr("stroke","black")
 		    .attr("stroke-width", "1")
 		    .style("fill", pentagonColour);
-	    }
+	  //  }
 	}
 
     },

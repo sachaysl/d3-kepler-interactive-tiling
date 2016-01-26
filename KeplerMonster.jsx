@@ -48,10 +48,14 @@ KeplerMonster = React.createClass({
 	//	t1.attr("transform", " rotate(" + 180 + "," + (width/2) + "," + (height/2)  +  ")" );
 
 	drawIntermediatePetal(36, masterg);
-    console.log("hi");
+	drawIntermediatePetal(108, masterg);
+	drawIntermediatePetal(180, masterg);
+	drawIntermediatePetal(252, masterg);
+	drawIntermediatePetal(324, masterg);
+    
 	function drawIntermediatePetal(degrees, masterg) {
 		    var g0 = masterg.append("g")
-		    .attr("transform", "translate(-28, 206) rotate(" + degrees + "," + (width/2 + 28) + "," + (height/2 - 206)  +  ")" );
+		    .attr("transform", "translate(-28, 278) rotate(" + degrees + "," + (width/2 + 28) + "," + (height/2 - 278)  +  ")" );
 
 	    var g = g0.append("g")
 		    .attr("transform", "translate(200, 200) rotate(90, 325, 300) translate(0, 250) scale(0.8, 0.8)");

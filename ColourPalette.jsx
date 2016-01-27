@@ -335,6 +335,7 @@ ColourPalette = React.createClass({
 
 	    return d3.behavior.drag()
 	        .on('dragstart', function() {
+		    console.log(this.id);
 		    id = this.id;
 		    rect = d3.select("#" + id);
 		    startingx = rect.attr("x");
@@ -365,7 +366,7 @@ ColourPalette = React.createClass({
 	};
 
 	var svg = d3.select("#paletteSvg").attr("width", 400).attr("height", 400).style("background", "white");
-
+/*
 	var rect = svg.append("rect")
 		.attr("id", "myrect")
 		.attr("x", 40)
@@ -384,7 +385,7 @@ ColourPalette = React.createClass({
 		.style("fill", "green")
 		.call(drag());
 
-
+*/
 	var circle = svg.append("circle")
 		.attr("id", "mycircle")
 	        .attr("cx", 200)
@@ -396,13 +397,21 @@ ColourPalette = React.createClass({
 		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); });
 
 
+	var width = 40;
+	var height = 30;
+	var ident = 0;
+	var startx = 0;
+	var starty = 30;
+	
 	svg.selectAll("rect").data(d3.entries(colorbrewer))
 	    .enter().append("rect")
-	    .attr("x", 50)
-	    .attr("y", 50)
-	    .attr("width", 80)
-	    .attr("height", 50)
-	    .style("fill", "red");
+	    .attr("id", function() { ident = ident + 1; return "myrect" + ident; }) 
+	    .attr("x", function() { startx = startx + 45; return startx; })
+	    .attr("y", starty)
+	    .attr("width", width)
+	    .attr("height", height)
+	    .style("fill", function(d) {return d.value;})
+	    .call(drag());
 
 
 

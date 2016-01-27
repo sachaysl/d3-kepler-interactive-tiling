@@ -3,7 +3,7 @@ KeplerMonster = React.createClass({
     drawKeplerMonster: function() {
 
 	var width = 400;
-	var height = 470;
+	var height = 400;
 	var monsterColour = "rgb(254, 111, 94)";
 	var decagonColour = "rgb(176,224,230)";
 	var pentagonColour = "rgb(102,153,204)";
@@ -651,7 +651,8 @@ KeplerMonster = React.createClass({
     svgStyle: {
 	margin: 'auto',
 	display: 'block',
-	float: 'right'
+	float: 'right',
+	marginTop: '7'
     },
 
 

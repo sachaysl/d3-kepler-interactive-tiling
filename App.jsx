@@ -11,6 +11,7 @@ App = React.createClass({
 
 	return(
 	    <div style = {this.divStyle}>
+	      <Header />
 	      <ColourPalette />
 	      <KeplerMonster />
 	    </div>

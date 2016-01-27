@@ -10,7 +10,6 @@
   <svg id="keplerMonster">
   </svg>
   <script>
-    console.log("hello");
     	var width = 850;
 	var height = 600;
 

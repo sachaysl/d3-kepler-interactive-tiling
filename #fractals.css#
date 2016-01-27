@@ -1,0 +1,48 @@
+/* CSS declarations go here */
+body {
+    background-image: url("http://graphics8.nytimes.com/newsgraphics/2015/07/14/pluto-flyby/50eeda0ba286e0f0137bf2d71a5ae22841d6f664/stars.gif") !important;
+    background: #1a1a1a;
+}
+
+.palette-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2px;
+    display:inline-block;
+
+}
+
+.palette {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 4px 2px 4px 2px;
+    padding: 4px;
+    background: #fff;
+    border: solid 1px #aaa;
+}
+
+.swatchColour {
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 0 4px 6px;
+    padding: 4px;
+    width: 80px;
+    height: 50px;
+    border: solid 1px #aaa;
+}
+
+
+.swatch {
+    display: block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+}
+
+.swatchLarge {
+    display: block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+}

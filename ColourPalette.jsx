@@ -322,29 +322,78 @@ ColourPalette = React.createClass({
     
 
 
-    }
+	    }
 
-    d3.select("#paletteDiv")
-    .selectAll(".palette")
-    .data(d3.entries(colorbrewer))
-    .enter().append("span")
-    .attr("class", "palette")
+	function drag() {
+	    var svg = d3.select("#paletteSvg");
+	    var rect = d3.select("#myrect");
+	    var circle = d3.select("#mycircle");
+	    var currentx = d3.transform(rect.attr("transform")).translate[0];
+	    var currenty = d3.transform(rect.attr("transform")).translate[1];
+//	    var currentx = d3.transform(d3.select(this).attr("transform")).translate[0];
+//	    var currenty = d3.transform(d3.select(this).attr("transform")).translate[1];
+	    
+
+	    console.log(rect.attr("x")); //usse rect.attr("x") and rex.attr("y") instead of currentx and current y
+
+	    return d3.behavior.drag()
+	        .on('dragstart', function() {  rect.style('fill', 'red'); })
+	        .on('drag', function() { rect.attr('x', d3.event.x)
+					 .attr('y', d3.event.y); })
+	        .on('dragend', function() {
+		    var currentx = rect.attr("x");
+		    var currenty = rect.attr("y");
+		    console.log(currentx);
+		    
+		    if (currentx > 160 && currentx < 240 && currenty > 160 && currenty < 240 ) {
+			console.log("entered if statement");
+			d3.select("#mycircle").style("fill", "blue"); //why is this not changing the colour of the circle????
+
+		    }
+		});
+	};
+
+	var svg = d3.select("#paletteSvg").attr("width", 400).attr("height", 400).style("background", "white");
+
+	var rect = svg.append("rect")
+		.attr("id", "myrect")
+	    .attr("x", 40)
+	    .attr("y", 40)
+	    .attr("width", 40)
+	    .attr("height", 30)
+	    .style("fill", "blue")
+	       .call(drag());
+
+	var circle = svg.append("circle")
+		.attr("id", "mycircle")
+	    .attr("cx", 200)
+	    .attr("cy", 200)
+		.attr("r", 40)
+		.style("fill", "white")
+		.style("stroke", "black");
+	
+
+	/*
+	d3.select("#paletteDiv")
+	    .selectAll(".palette")
+	    .data(d3.entries(colorbrewer))
+	    .enter().append("span")
+	    .attr("class", "palette")
 	    .attr("title", function(d) { return d.key; })
 	    .style("background-color", function(d) { return d.value; })
 	    .on("click", function(d) {
 
 		props.setCurrentColour(d.value); })
-   // .on("mouseover", function(d) { 
-    .selectAll(".swatch")
-    .data(function(d) { return d.value[d3.keys(d.value).map(Number).sort(d3.descending)[0]]; })
-    .enter().append("span")
-    .attr("class", "swatch")
-    .style("background-color", function(d) { return d; })
-    .on("mouseover", function(d) { d3.select(this).attr("class","swatchLarge")})
-    .on("mouseout",  function(d) { d3.select(this).attr("class","swatch")})
+	    .selectAll(".swatch")
+	    .data(function(d) { return d.value[d3.keys(d.value).map(Number).sort(d3.descending)[0]]; })
+	    .enter().append("span")
+	    .attr("class", "swatch")
+	    .style("background-color", function(d) { return d; })
+	    .on("mouseover", function(d) { d3.select(this).attr("class","swatchLarge")})
+		.on("mouseout",  function(d) { d3.select(this).attr("class","swatch")});
 
+*/
 
-  
 
 	
     },
@@ -352,7 +401,7 @@ ColourPalette = React.createClass({
 
     componentDidMount: function() {
 	//this is invoked once when the component is first rendered
-	var el = this.getDOMNode(); //this is the div we are rendering
+	var el = this.getDOMNode(); //this is the svg we are rendering
 	//var svg = d3.select(el)
 	//	.append("svg")
 	//	.attr("width", this.props.width)
@@ -374,10 +423,18 @@ ColourPalette = React.createClass({
 	}
     },
 
+    svgStyle: {
+	margin: 'auto',
+	display: 'block',
+	float: 'left',
+	marginTop: '7'
+    },
 
     render: function() {
 	return (
-	    <div className="palette-container" id="paletteDiv"></div>
+	    <svg id="paletteSvg" style = {this.svgStyle}>
+            </svg>
+
 	);
     }
 });

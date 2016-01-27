@@ -327,13 +327,11 @@ ColourPalette = React.createClass({
 	function drag() {
 	    var svg = d3.select("#paletteSvg");
 	    var circle = d3.select("#mycircle");
-	    var startingx;   // = rect.attr("x");
-	    var startingy;   //= rect.attr("y");
-	    var colour;     //rect.style("fill");
+	    var startingx;   
+	    var startingy;   
+	    var colour;     
 	    var id;
 	    var rect;
-//	    var currentx = d3.transform(d3.select(this).attr("transform")).translate[0];
-//	    var currenty = d3.transform(d3.select(this).attr("transform")).translate[1];
 
 	    return d3.behavior.drag()
 	        .on('dragstart', function() {
@@ -351,14 +349,14 @@ ColourPalette = React.createClass({
 		    var currentx = rect.attr("x");
 		    var currenty = rect.attr("y");
 
-		    console.log(currentx);
+		   // console.log(currentx);
 
 		    rect.remove();
 		    
 		    svg.append("rect").attr("x", startingx).attr("y", startingy).attr("width", 40).attr("height", 30)
 			.style("fill", colour).attr("id", "myrect").call(drag());
 
-		    if (currentx > 160 && currentx < 240 && currenty > 160 && currenty < 240 ) {
+		    if (currentx > 160 && currentx < 240 && currenty > 160 && currenty < 240 ) { //i.e. if rectangle is within circle
 			console.log("entered if statement");
 			d3.select("#mycircle").style("fill", colour); 
 
@@ -395,10 +393,20 @@ ColourPalette = React.createClass({
 		.style("fill", "white")
 		.style("stroke", "black")
 		.on("mouseover", function() { return d3.select("#mycircle").style("opacity", 0.5); })
-		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); })
-	
-	
+		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); });
 
+
+	svg.selectAll("rect").data(d3.entries(colorbrewer))
+	    .enter().append("rect")
+	    .attr("x", 50)
+	    .attr("y", 50)
+	    .attr("width", 80)
+	    .attr("height", 50)
+	    .style("fill", "red");
+
+
+
+	
 	/*
 	d3.select("#paletteDiv")
 	    .selectAll(".palette")

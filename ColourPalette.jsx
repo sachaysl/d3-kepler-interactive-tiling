@@ -397,16 +397,17 @@ ColourPalette = React.createClass({
 		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); });
 
 
-	var width = 40;
-	var height = 30;
+	var width = 26;
+	var xgap = 31;
+	var height = 25;
 	var ident = 0;
-	var startx = 0;
+	var startx = -15;
 	var starty = 30;
 	
 	svg.selectAll("rect").data(d3.entries(colorbrewer))
 	    .enter().append("rect")
 	    .attr("id", function() { ident = ident + 1; return "myrect" + ident; }) 
-	    .attr("x", function() { startx = startx + 45; return startx; })
+	    .attr("x", function() { startx = startx + xgap; return startx; })
 	    .attr("y", starty)
 	    .attr("width", width)
 	    .attr("height", height)

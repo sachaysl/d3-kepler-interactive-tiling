@@ -364,6 +364,7 @@ ColourPalette = React.createClass({
 		    if (currentx > 170 && currentx < 230 && currenty > 430 && currenty < 490 ) { //i.e. if rectangle is within circle
 			console.log("entered if statement");
 			d3.select("#mycircle").style("fill", colour);
+			d3.selectAll(".pentagon").style("fill", colour);
 
 		    }
 		});

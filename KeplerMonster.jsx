@@ -349,6 +349,7 @@ KeplerMonster = React.createClass({
 	    //decagon1
 	    svg.append("svg:polygon")
 		.attr("id", "decagon1")
+		.attr("class", "decagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(18,231,200)")
 		.attr("points", calculatePolygonPoints(10,231,200,50))
@@ -361,6 +362,7 @@ KeplerMonster = React.createClass({
 	    //decagon2
 	    svg.append("svg:polygon")
 		.attr("id", "decagon2")
+	    	.attr("class", "decagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(18,479,200)")
 		.attr("points", calculatePolygonPoints(10,479,200,50))
@@ -373,6 +375,7 @@ KeplerMonster = React.createClass({
 	    //pentagon1
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon1")
+		.attr("class", "pentagon")
 		.attr("visibility", "visible")
 	    // .attr("transform", "rotate(90," + star1[0] + "," + star1[1] + ")")
 		.attr("points", calculatePolygonPoints(5,299.5,200,26))
@@ -385,6 +388,7 @@ KeplerMonster = React.createClass({
 	    //pentagon2
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon2")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 410.5, 200)")
 		.attr("points", calculatePolygonPoints(5,410.5,200,26))
@@ -396,6 +400,7 @@ KeplerMonster = React.createClass({
 	    //pentagon3
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon3")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(0, 410, 200)")
 		.attr("points", calculatePolygonPoints(5,423.5,160,26))
@@ -407,6 +412,7 @@ KeplerMonster = React.createClass({
 	    //pentagon4
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon4")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 286.5, 160)")
 		.attr("points", calculatePolygonPoints(5,286.5,160,26))
@@ -418,6 +424,7 @@ KeplerMonster = React.createClass({
 	    //pentagon5
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon5")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 286.5, 240)")
 		.attr("points", calculatePolygonPoints(5,286.5,240,26))
@@ -429,6 +436,7 @@ KeplerMonster = React.createClass({
 	    //pentagon6
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon6")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(0, 420, 240)")
 		.attr("points", calculatePolygonPoints(5,423.5,240,26))
@@ -441,6 +449,7 @@ KeplerMonster = React.createClass({
 	    //pentagon7
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon7")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 411, 120)")
 		.attr("points", calculatePolygonPoints(5,411,120,26))
@@ -452,6 +461,7 @@ KeplerMonster = React.createClass({
 	    //pentagon8
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon8")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 457.5, 135)")
 		.attr("points", calculatePolygonPoints(5,457.5,135,26))
@@ -463,6 +473,7 @@ KeplerMonster = React.createClass({
 	    //pentagon9
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon9")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36, 277.5, 125)")
 		.attr("points", calculatePolygonPoints(5,299,120,26))
@@ -474,6 +485,7 @@ KeplerMonster = React.createClass({
 	    //pentagon10
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon10")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36, 285, 135)")
 		.attr("points", calculatePolygonPoints(5,252.5,135,26))
@@ -485,6 +497,7 @@ KeplerMonster = React.createClass({
 	    //pentagon11
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon11")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36, 285, 135)")
 		.attr("points", calculatePolygonPoints(5,252.5,265,26))
@@ -496,6 +509,7 @@ KeplerMonster = React.createClass({
 	    //pentagon12
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon12")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36, 285, 135)")
 		.attr("points", calculatePolygonPoints(5,299,280,26))
@@ -507,6 +521,7 @@ KeplerMonster = React.createClass({
 	    //pentagon13
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon13")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 411, 280)")
 		.attr("points", calculatePolygonPoints(5,411,280,26))
@@ -518,6 +533,7 @@ KeplerMonster = React.createClass({
 	    //pentagon14
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon14")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 457.5, 265)")
 		.attr("points", calculatePolygonPoints(5,457.5,265,26))
@@ -529,6 +545,7 @@ KeplerMonster = React.createClass({
 	    //pentagon15
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon15")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 534, 241)")
 		.attr("points", calculatePolygonPoints(5,534,240,26))
@@ -540,6 +557,7 @@ KeplerMonster = React.createClass({
 	    //pentagon16
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon16")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36, 534, 241)")
 		.attr("points", calculatePolygonPoints(5,547.5,200,26))
@@ -551,6 +569,7 @@ KeplerMonster = React.createClass({
 	    //pentagon17
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon17")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36, 534.5, 160)")
 		.attr("points", calculatePolygonPoints(5,534.5,160,26))
@@ -561,7 +580,8 @@ KeplerMonster = React.createClass({
 
 	    //pentagon18
 	    svg.append("svg:polygon")
-		.attr("id", "pentagon15")
+		.attr("id", "pentagon18")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36, 134, 240)")
 		.attr("points", calculatePolygonPoints(5,175,240,26))
@@ -572,7 +592,8 @@ KeplerMonster = React.createClass({
 
 	    //pentagon19
 	    svg.append("svg:polygon")
-		.attr("id", "pentagon16")
+		.attr("id", "pentagon19")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(180, 162.5, 200)")
 		.attr("points", calculatePolygonPoints(5,162.5,200,26))
@@ -584,6 +605,7 @@ KeplerMonster = React.createClass({
 	    //pentagon20
 	    svg.append("svg:polygon")
 		.attr("id", "pentagon17")
+	    	.attr("class", "pentagon")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36, 134.5, 160)")
 		.attr("points", calculatePolygonPoints(5,175.5,160,26))
@@ -595,6 +617,7 @@ KeplerMonster = React.createClass({
 	    //pentacle1
 	    svg.append("svg:polygon")
 		.attr("id", "pentacle1")
+	    	.attr("class", "pentacle")
 		.attr("visibility", "visible")
 		.attr("transform", "rotate(36,120.5,200)")
 		.attr("points", calculatePentaclePoints(120.5,200,5, 41,16))
@@ -606,6 +629,7 @@ KeplerMonster = React.createClass({
 		    //pentacle2
 	    svg.append("svg:polygon")
 		.attr("id", "pentacle2")
+	    	.attr("class", "pentacle")
 		.attr("visibility", "visible")
     //	    .attr("transform", "rotate(36,120.5,200)")
 		.attr("points", calculatePentaclePoints(589.5,200,5, 41,16))
@@ -616,29 +640,31 @@ KeplerMonster = React.createClass({
 
 	 //   if (type != 1) {
 		//pentagon21
-		svg.append("svg:polygon")
-		    .attr("id", "pentagon21")
-		    .attr("visibility", "visible")
-	//	    .attr("transform", "rotate(180, 162.5, 200)")
-		    .attr("points", calculatePolygonPoints(5,53,200,26))
-		    .attr("fill", "none")
-		    .attr("stroke","black")
-		    .attr("stroke-width", "1")
-		    .style("fill", pentagonColour);
-	   // }
+	    svg.append("svg:polygon")
+		.attr("id", "pentagon21")
+		.attr("class", "pentagon")
+		.attr("visibility", "visible")
+    //	    .attr("transform", "rotate(180, 162.5, 200)")
+		.attr("points", calculatePolygonPoints(5,53,200,26))
+		.attr("fill", "none")
+		.attr("stroke","black")
+		.attr("stroke-width", "1")
+		.style("fill", pentagonColour);
+       // }
 	    
 	  //  if (type != 2) {
-		//pentagon22
-		svg.append("svg:polygon")
-		    .attr("id", "pentagon22")
-		    .attr("visibility", "visible")
-		    .attr("transform", "rotate(180, 657, 200)")
-		    .attr("points", calculatePolygonPoints(5,657,200,26))
-		    .attr("fill", "none")
-		    .attr("stroke","black")
-		    .attr("stroke-width", "1")
-		    .style("fill", pentagonColour);
-	  //  }
+	    //pentagon22
+	    svg.append("svg:polygon")
+		.attr("id", "pentagon22")
+		.attr("class", "pentagon")
+		.attr("visibility", "visible")
+		.attr("transform", "rotate(180, 657, 200)")
+		.attr("points", calculatePolygonPoints(5,657,200,26))
+		.attr("fill", "none")
+		.attr("stroke","black")
+		.attr("stroke-width", "1")
+		.style("fill", pentagonColour);
+      //  }
 	}
 
     },

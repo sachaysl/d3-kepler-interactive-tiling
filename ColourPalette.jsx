@@ -363,6 +363,7 @@ ColourPalette = React.createClass({
 		    if (currentx > 112 && currentx < 178 && currenty > 414 && currenty < 474 ) { 
 			d3.select("#mypentagon").style("fill", colour);
 			d3.selectAll(".pentagon").style("fill", colour);
+			d3.select("#keplerMonster").style("background", colour);
 	
 		    }
 
@@ -474,6 +475,8 @@ ColourPalette = React.createClass({
 	    .attr("width", width)
 	    .attr("height", height)
 	    .style("fill", function(d) {return d.value;})
+	    .style("stroke-width", 0.5)
+	    .style("stroke", "black")
 	    .call(drag());
 
 	function calculatePolygonPoints(sides, centerX, centerY, radius) {

@@ -358,19 +358,25 @@ ColourPalette = React.createClass({
 			.style("fill", colour).attr("id", id).attr("class", "safe").call(drag());
 
 		    d3.selectAll(".safe").attr("opacity", 1);
-		    
-		    if (currentx > 135 && currentx < 165 && currenty > 435 && currenty < 465 ) { //i.e. if rectangle is within pentagon
+
+		    //if rectangle is within pentagon
+		    if (currentx > 135 && currentx < 165 && currenty > 435 && currenty < 465 ) { 
 			d3.select("#mypentagon").style("fill", colour);
 			d3.selectAll(".pentagon").style("fill", colour);
+	
+		    }
 
+		    //if rectangle is within decagon
+		    if (currentx > 230 && currentx < 260 && currenty > 435 && currenty < 465 ) { 
+			d3.select("#mydecagon").style("fill", colour);
+			d3.selectAll(".decagon").style("fill", colour);
 		    }
 		});
 	};
 
 	var svg = d3.select("#paletteSvg").attr("width", 400).attr("height", 500).style("background", "white");
 	var marginLeft = 5;
-
-
+	
 	var star = svg.append("svg:polygon")
 		.attr("id", "mypentacle")
 		.attr("class", "shapes")

@@ -342,6 +342,9 @@ ColourPalette = React.createClass({
 		    startingy = rect.attr("y");
 		    colour = rect.style("fill");
 
+		    d3.selectAll(".safe").attr("opacity", 0.2);
+		    rect.attr("opacity", 1);
+
 		    rect.attr('width', '50').attr('height', '40'); })
 		.on('drag', function() {  
 		    rect.attr('x', d3.event.x)
@@ -353,13 +356,14 @@ ColourPalette = React.createClass({
 		   // console.log(currentx);
 
 		    rect.remove();
-		    
-		    svg.append("rect").attr("x", startingx).attr("y", startingy).attr("width", 40).attr("height", 30)
-			.style("fill", colour).attr("id", "myrect").call(drag());
+		    svg.append("rect").attr("x", startingx).attr("y", startingy).attr("width", width).attr("height", height)
+			.style("fill", colour).attr("id", id).attr("class", "safe").call(drag());
 
-		    if (currentx > 160 && currentx < 240 && currenty > 160 && currenty < 240 ) { //i.e. if rectangle is within circle
+		    d3.selectAll(".safe").attr("opacity", 1);
+		    
+		    if (currentx > 170 && currentx < 230 && currenty > 430 && currenty < 490 ) { //i.e. if rectangle is within circle
 			console.log("entered if statement");
-			d3.select("#mycircle").style("fill", colour); 
+			d3.select("#mycircle").style("fill", colour);
 
 		    }
 		});
@@ -389,8 +393,8 @@ ColourPalette = React.createClass({
 	var circle = svg.append("circle")
 		.attr("id", "mycircle")
 	        .attr("cx", 200)
-	        .attr("cy", 200)
-		.attr("r", 40)
+	        .attr("cy", 460)
+		.attr("r", 30)
 		.style("fill", "white")
 		.style("stroke", "black")
 		.on("mouseover", function() { return d3.select("#mycircle").style("opacity", 0.5); })
@@ -409,6 +413,7 @@ ColourPalette = React.createClass({
 	
 	svg.selectAll("rect").data(d3.entries(colorbrewer))
 	    .enter().append("rect")
+	    .attr("class", "safe")
 	    .attr("id", function() {console.log(ident); ident = ident + 1; return "myrect" + ident; }) 
 	    .attr("x", function() {
 		if (counter1%12 == 1) {

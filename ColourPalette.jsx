@@ -365,7 +365,7 @@ ColourPalette = React.createClass({
 		});
 	};
 
-	var svg = d3.select("#paletteSvg").attr("width", 400).attr("height", 400).style("background", "white");
+	var svg = d3.select("#paletteSvg").attr("width", 400).attr("height", 500).style("background", "white");
 /*
 	var rect = svg.append("rect")
 		.attr("id", "myrect")
@@ -400,15 +400,31 @@ ColourPalette = React.createClass({
 	var width = 26;
 	var xgap = 31;
 	var height = 25;
+	var ygap = 30;
 	var ident = 0;
-	var startx = -15;
-	var starty = 30;
+	var startx = 16;
+	var starty = -10;
+	var counter1 = 1;
+	var counter2 = 1;
 	
 	svg.selectAll("rect").data(d3.entries(colorbrewer))
 	    .enter().append("rect")
-	    .attr("id", function() { ident = ident + 1; return "myrect" + ident; }) 
-	    .attr("x", function() { startx = startx + xgap; return startx; })
-	    .attr("y", starty)
+	    .attr("id", function() {console.log(ident); ident = ident + 1; return "myrect" + ident; }) 
+	    .attr("x", function() {
+		if (counter1%12 == 1) {
+		    startx = 16;
+		}
+		else {
+		    startx = startx + xgap;
+		}
+		counter1 = counter1 + 1;
+		return startx; })
+	    .attr("y", function() {
+		if (counter2%12 == 1) {
+		    starty = starty + ygap;
+		}
+		counter2 = counter2 + 1;
+		return starty;})
 	    .attr("width", width)
 	    .attr("height", height)
 	    .style("fill", function(d) {return d.value;})

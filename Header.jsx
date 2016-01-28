@@ -12,7 +12,7 @@ Header = React.createClass({
 
 	return(
 	    <h1 style = {this.headStyle} id = "header">
-	      Kepler Aa
+	      Kepler's Aa
 	    </h1>
 	);
 

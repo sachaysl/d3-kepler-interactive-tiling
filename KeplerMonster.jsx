@@ -154,7 +154,17 @@ KeplerMonster = React.createClass({
 	    .attr("transform", "translate(200, 200) rotate(54, 0, 0) translate(-619.5, -263) scale(0.4, 0.4)");
 
 	    var g25 = g0.append("g")
-	    .attr("transform", "translate(200, 200) rotate(18, 0, 0) translate(-510.5, -453.5) scale(0.4, 0.4)");
+		    .attr("transform", "translate(200, 200) rotate(18, 0, 0) translate(-510.5, -453.5) scale(0.4, 0.4)");
+
+	    var g26 = g0.append("g")
+		    .attr("transform", "translate(200, 200) rotate(18, 0, 0) translate(-510.5, -369.5) scale(0.4, 0.4)");
+
+	    var g27 = g0.append("g")
+		    .attr("transform", "translate(200, 200) rotate(-18, 0, 0) translate(-329.2, -297.3) scale(0.4, 0.4)");
+
+	    var g28 = g0.append("g")
+		    .attr("transform", "translate(200, 200) rotate(54, 0, 0) translate(-620.2, -347.2) scale(0.4, 0.4)");
+
 
 
 	    drawKeplerMonster(g,2);
@@ -184,6 +194,11 @@ KeplerMonster = React.createClass({
 	    drawKeplerMonster(g23,1);
 	    drawKeplerMonster(g24,1);
 	    drawKeplerMonster(g25,1);
+	    drawKeplerMonster(g26,1);
+	    drawKeplerMonster(g27,1);
+	    drawKeplerMonster(g28,1);
+	    
+	    
 
 	}
 

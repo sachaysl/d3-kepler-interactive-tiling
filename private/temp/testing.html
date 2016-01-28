@@ -10,7 +10,6 @@
   <svg id="keplerMonster">
   </svg>
   <script>
-    console.log("hello");
     	var width = 850;
 	var height = 600;
 
@@ -139,8 +138,20 @@
     .attr("transform", "translate(200, 200) rotate(54, 0, 0) translate(-619.5, -263) scale(0.4, 0.4)");
 
     var g25 = g0.append("g")
-    .attr("transform", "translate(200, 200) rotate(18, 0, 0) translate(-510.5, -453.5) scale(0.4, 0.4)");
+	.attr("transform", "translate(200, 200) rotate(18, 0, 0) translate(-510.5, -453.5) scale(0.4, 0.4)");
 
+    var g26 = g0.append("g")
+	.attr("transform", "translate(200, 200) rotate(18, 0, 0) translate(-510.5, -369.5) scale(0.4, 0.4)");
+
+	
+    var g27 = g0.append("g")
+	.attr("transform", "translate(200, 200) rotate(-18, 0, 0) translate(-329.2, -297.3) scale(0.4, 0.4)");
+
+    var g28 = g0.append("g")
+    .attr("transform", "translate(200, 200) rotate(54, 0, 0) translate(-620.2, -347.2) scale(0.4, 0.4)");
+
+
+	
     
     drawKeplerMonster3(g);
     drawKeplerMonster3(g00);
@@ -167,30 +178,19 @@
     drawKeplerMonster2(g21);
     drawKeplerMonster2(g22);
     drawKeplerMonster2(g23);
-    drawKeplerMonster2(g24);
-    drawKeplerMonster2(g25);
+	drawKeplerMonster2(g24);
+	drawKeplerMonster2(g25);
+	drawKeplerMonster2(g26);
+	drawKeplerMonster2(g27);
+	drawKeplerMonster2(g28);
+	
+	
+	
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
 
     }
-	function drawIntermediatePetal(degrees, masterg) {
+
+    function drawIntermediatePetal(degrees, masterg) {
 		    var g0 = masterg.append("g")
 		    .attr("transform", "translate(-28, 278) rotate(" + degrees + "," + (width/2 + 28) + "," + (height/2 - 278)  +  ")" );
 

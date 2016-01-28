@@ -340,6 +340,7 @@ KeplerMonster = React.createClass({
 	    //monster
 	    svg.append("svg:polygon")
 		.attr("id", "monster")
+		.attr("class", "monster")
 		.attr("visibility", "visible")
 		.attr("points", calculateMonsterPoints(355,159.5,50))
 		.attr("fill", "none")

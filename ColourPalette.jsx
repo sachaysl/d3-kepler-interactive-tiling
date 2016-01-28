@@ -378,6 +378,12 @@ ColourPalette = React.createClass({
 			d3.selectAll(".pentacle").style("fill", colour);
 		    }
 
+		    //if rectangle is within monster
+		    if (currentx > 300 && currentx < 375 && currenty > 380 && currenty < 484 ) { 
+			d3.select("#mymonster").style("fill", colour);
+			d3.selectAll(".monster").style("fill", colour);
+		    }
+
 		});
 	};
 

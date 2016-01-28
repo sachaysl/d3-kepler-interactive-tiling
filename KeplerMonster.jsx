@@ -33,6 +33,7 @@ KeplerMonster = React.createClass({
 	    .style("fill", pentacleColour);
 
 	var masterg = svg.append("g").attr("id", "masterg");
+
 	
 
 	drawTiling();

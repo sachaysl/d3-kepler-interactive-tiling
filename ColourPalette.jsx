@@ -318,9 +318,7 @@ ColourPalette = React.createClass({
     //PastelPink: "rgb(222,165,164)",
     //SilverPink: "rgb(196,174,173)",
    // MountbattenPink: "rgb(153,122,141)",
-    //SolidPink: "rgb(137,56,67)",
-    
-
+		//SolidPink: "rgb(137,56,67)",
 
 	    }
 
@@ -345,7 +343,7 @@ ColourPalette = React.createClass({
 		    d3.selectAll(".safe").attr("opacity", 0.2);
 		    rect.attr("opacity", 1);
 
-		    rect.attr('width', '50').attr('height', '40'); })
+		    rect.attr('width', width).attr('height', height); })
 		.on('drag', function() {  
 		    rect.attr('x', d3.event.x)
 			.attr('y', d3.event.y); })
@@ -361,9 +359,8 @@ ColourPalette = React.createClass({
 
 		    d3.selectAll(".safe").attr("opacity", 1);
 		    
-		    if (currentx > 170 && currentx < 230 && currenty > 430 && currenty < 490 ) { //i.e. if rectangle is within circle
-			console.log("entered if statement");
-			d3.select("#mycircle").style("fill", colour);
+		    if (currentx > 135 && currentx < 165 && currenty > 435 && currenty < 465 ) { //i.e. if rectangle is within pentagon
+			d3.select("#mypentagon").style("fill", colour);
 			d3.selectAll(".pentagon").style("fill", colour);
 
 		    }
@@ -371,33 +368,57 @@ ColourPalette = React.createClass({
 	};
 
 	var svg = d3.select("#paletteSvg").attr("width", 400).attr("height", 500).style("background", "white");
-/*
-	var rect = svg.append("rect")
-		.attr("id", "myrect")
-		.attr("x", 40)
-		.attr("y", 40)
-		.attr("width", 40)
-		.attr("height", 30)
-		.style("fill", "blue")
-		.call(drag());
+	var marginLeft = 5;
 
-	var rect2 = svg.append("rect")
-		.attr("id", "myrect2")
-		.attr("x", 85)
-		.attr("y", 40)
-		.attr("width", 40)
-		.attr("height", 30)
-		.style("fill", "green")
-		.call(drag());
 
-*/
-	var circle = svg.append("circle")
-		.attr("id", "mycircle")
-	        .attr("cx", 200)
-	        .attr("cy", 460)
-		.attr("r", 30)
+	var star = svg.append("svg:polygon")
+		.attr("id", "mypentacle")
+		.attr("class", "shapes")
+	        .attr("visibility", "visible")
+	        .attr("points", calculatePentaclePoints(marginLeft + 50,450,5, 30,12))
+	        .attr("fill", "none")
+		.attr("stroke","black")
+		.attr("stroke-width", "1")
 		.style("fill", "white")
-		.style("stroke", "black")
+		.on("mouseover", function() { return d3.select("#mycircle").style("opacity", 0.5); })
+		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); });
+
+	var pentagon = 	svg.append("svg:polygon")
+		.attr("id", "mypentagon")
+		.attr("class", "shapes")
+		.attr("visibility", "visible")
+    //	    .attr("transform", "rotate(180, 162.5, 200)")
+		.attr("points", calculatePolygonPoints(5,marginLeft + 145,450,26))
+		.attr("fill", "none")
+		.attr("stroke","black")
+		.attr("stroke-width", "1")
+		.style("fill", "white")
+		.on("mouseover", function() { return d3.select("#mycircle").style("opacity", 0.5); })
+		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); });
+
+	
+	var decagon = svg.append("svg:polygon")
+		.attr("id", "mydecagon")
+		.attr("class", "shapes")
+		.attr("visibility", "visible")
+	//	.attr("transform", "rotate(18,479,200)")
+		.attr("points", calculatePolygonPoints(10,marginLeft + 240,450,26))
+		.attr("fill", "none")
+		.attr("stroke","black")
+		.attr("stroke-width", "1")
+		.style("fill", "white")
+		.on("mouseover", function() { return d3.select("#mycircle").style("opacity", 0.5); })
+		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); });
+
+	var monster = svg.append("svg:polygon")
+		.attr("id", "mymonster")
+		.attr("class", "shapes")
+		.attr("visibility", "visible")
+		.attr("points", calculateMonsterPoints(marginLeft + 335,410,26))
+		.attr("fill", "none")
+		.attr("stroke", "black")
+		.attr("stroke-width", "1")
+		.style("fill", "white")
 		.on("mouseover", function() { return d3.select("#mycircle").style("opacity", 0.5); })
 		.on("mouseout",  function() { return d3.select("#mycircle").style("opacity", 1); });
 
@@ -436,30 +457,99 @@ ColourPalette = React.createClass({
 	    .style("fill", function(d) {return d.value;})
 	    .call(drag());
 
+	function calculatePolygonPoints(sides, centerX, centerY, radius) {
 
+	    var results = "";
+	    var angle = Math.PI / sides;
+	    var r = radius;
 
+	    for (var i = 0; i < sides; i++) {
+		var currX = centerX + Math.cos(i * 2 * angle) * r;
+		var currY = centerY + Math.sin(i * 2 * angle) *  r;
+
+				// Our first time we simply append the coordinates
+		// subsequent times we append a ", " to distinguish
+		// each coordinate pair.
+
+		if (i == 0)
+		{
+		    results = currX + "," + currY;
+		}
+		else
+		{
+		    results += "," + currX + "," + currY;
+		}
+	    }
+
+	    return results;
+	}
+
+	function calculatePentaclePoints(centerX, centerY, arms, outerRadius, innerRadius) {
+	    	    var results = "";
+	    var angle = Math.PI / arms;
+
+	    for (var i = 0; i < 2 * arms; i++) {
+
+		//use outer or inner radius depending on which iteration we are in.
+
+		var r = (i & 1) == 0 ? outerRadius : innerRadius;
+
+		var currX = centerX + Math.cos(i * angle) * r;
+		var currY = centerY + Math.sin(i * angle) * r;
+
+		// Our first time we simply append the coordinates
+		// subsequent times we append a ", " to distinguish
+		// each coordinate pair.
+
+		if (i == 0)
+		{
+		    results = currX + "," + currY;
+		}
+		else
+		{
+		    results += "," + currX + "," + currY;
+		}
+	    }
+
+	    return results;
+	}
+
+	function calculateMonsterPoints(centerX, centerY, radius) {
+	    var results = "";
+	    var angle = Math.PI / 10;
+	    var r = radius;
+
+	    var centerX2 = centerX;
+	    var centerY2 = centerY + (1.6181 * r);
 	
-	/*
-	d3.select("#paletteDiv")
-	    .selectAll(".palette")
-	    .data(d3.entries(colorbrewer))
-	    .enter().append("span")
-	    .attr("class", "palette")
-	    .attr("title", function(d) { return d.key; })
-	    .style("background-color", function(d) { return d.value; })
-	    .on("click", function(d) {
+	    for (var i = 0; i < 9; i++) {
+		var currX = centerX + Math.cos(7 * angle + i * 2 * angle) * r;
+		var currY = centerY + Math.sin(7 * angle + i * 2 * angle) *  r;
 
-		props.setCurrentColour(d.value); })
-	    .selectAll(".swatch")
-	    .data(function(d) { return d.value[d3.keys(d.value).map(Number).sort(d3.descending)[0]]; })
-	    .enter().append("span")
-	    .attr("class", "swatch")
-	    .style("background-color", function(d) { return d; })
-	    .on("mouseover", function(d) { d3.select(this).attr("class","swatchLarge")})
-		.on("mouseout",  function(d) { d3.select(this).attr("class","swatch")});
+				// Our first time we simply append the coordinates
+		// subsequent times we append a ", " to distinguish
+		// each coordinate pair.
 
-*/
+		if (i == 0)
+		{
+		    results = currX + "," + currY;
+		}
+		else
+		{
+		    results += "," + currX + "," + currY;
+		}
+	    }
 
+	    for (var k = 0; k < 9; k++) {
+		var currX2 = centerX + Math.cos(-3 * angle + k * 2 * angle) * r;
+		var currY2 = centerY2 + Math.sin(-3 * angle + k * 2 * angle) *  r;
+
+		    results += "," + currX2 + "," + currY2;
+	
+	    }
+
+	    return results;
+	}
 
 	
     },

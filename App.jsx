@@ -14,6 +14,7 @@ App = React.createClass({
 	      <Header />
 	      <ColourPalette />
 	      <KeplerMonster />
+	      <Footer />
 	    </div>
 	);
 

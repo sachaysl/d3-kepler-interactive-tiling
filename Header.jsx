@@ -2,7 +2,7 @@ Header = React.createClass({
     headStyle: {
 	color: 'white',
 	fontSize: '36px',
-	fontFamily: 'Palatino',
+	fontFamily: 'Helvetica',
 	fontWeight: '100',
 	textAlign: 'center',
 	marginBottom: '50'

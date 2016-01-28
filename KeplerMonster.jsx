@@ -680,7 +680,8 @@ KeplerMonster = React.createClass({
 	margin: 'auto',
 	display: 'block',
 	float: 'right',
-	marginTop: '7'
+	marginTop: '7',
+	marginBottom: '25'
     },
 
 

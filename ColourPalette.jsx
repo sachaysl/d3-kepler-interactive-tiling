@@ -360,17 +360,24 @@ ColourPalette = React.createClass({
 		    d3.selectAll(".safe").attr("opacity", 1);
 
 		    //if rectangle is within pentagon
-		    if (currentx > 135 && currentx < 165 && currenty > 435 && currenty < 465 ) { 
+		    if (currentx > 112 && currentx < 178 && currenty > 414 && currenty < 474 ) { 
 			d3.select("#mypentagon").style("fill", colour);
 			d3.selectAll(".pentagon").style("fill", colour);
 	
 		    }
 
 		    //if rectangle is within decagon
-		    if (currentx > 230 && currentx < 260 && currenty > 435 && currenty < 465 ) { 
+		    if (currentx > 210 && currentx < 270 && currenty > 414 && currenty < 474 ) { 
 			d3.select("#mydecagon").style("fill", colour);
 			d3.selectAll(".decagon").style("fill", colour);
 		    }
+
+		    //if rectangle is within star
+		    if (currentx > 15 && currentx < 90 && currenty > 414 && currenty < 474 ) { 
+			d3.select("#mypentacle").style("fill", colour);
+			d3.selectAll(".pentacle").style("fill", colour);
+		    }
+
 		});
 	};
 
